@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Reenie+Beanie&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo-button">
+            <img src="images/rm_logo.png" width="120px">
+        </a> 
+        <nav>
+            <a href="index.html" class="nav-button">HOME</a>&nbsp;&nbsp;
+            <a href="projects.html" class="nav-button">WORK</a>&nbsp;&nbsp;
+            <a href="play.html" class="active">PLAY</a>&nbsp;&nbsp;
+            <a href="about.html" class="nav-button">ABOUT</a>&nbsp;&nbsp;
+        </nav>
+        <div class="time-container">
+            <div class="time">
+                <p id="current-time"></p>
+            </div> 
+        </div>
+        <script>
+            setInterval(() => {
+                let time = document.getElementById("current-time")
+                let d = new Date();
+                time.innerHTML = d.toLocaleTimeString();
+            }, 1000)
+        </script>
+        <div class="location-container">
+            <p class="location">Minneapolis, MN</p>
+        </div>
+    </header>
+
+    <div>
+        <h3 class="projects-text">the fun stuff. creative pools that i choose to immerse myself in. page is currently being edited. come back a different time.</h3>
+        <p></p>
+    </div>
+    <div>
+        <h1 class="whitespace"></h1>
+    </div>
+
+    <div class="items">
+        <a href="" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>MUSIC</h1></div>
+            <img src="images/music_thumb2.png" width="300px" height="300px">
+        <a href="#" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>FILM</h1></div>
+            <img src="images/Film_Thumb.jpg" width="300px" height="300px">
+        <a href="#" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>DINING</h1></div>
+            <img src="images/Dine_thumb.JPG" width="300px" height="300px">
+        <a href="#" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>FASHION</h1></U></div>
+            <img src="images/Fashion_Thumb.jpg" width="300px" height="300px">
+        <a href="#" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>TRAVEL</h1></div>
+            <img src="images/travel-thumb.JPG" width="300px" height="300px">
+        </a>
+        <a href="#" class="items-cover play-translucent">
+            <div class="overlay-general"><h1>INTERIOR</h1></div>
+            <img src="images/interior_thumb.jpg" width="300px" height="300px">
+        </a>
+    </div>
+
+    <script>
+        document.querySelectorAll('.item-sort button').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                document.querySelectorAll('.items-cover').forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <footer class="footer">
+        <div>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/romirmittal/" target="_blank" class="link">
+                    <h4>linkedin</h4>
+                </a>
+                <a href="https://music.apple.com/profile/romirrmittal" target="_blank" class="link">
+                    <h4>apple music</h4>
+                </a>
+                <a href="https://www.instagram.com/romirrmittal/" target="_blank" class="link">
+                    <h4>instagram</h4>
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>enjoy if you happen to come across, rm</p>
+            </div>
+            <div class="cp">
+                <p> © 2024 RM. All Rights Reserved. </p> 
+             </div>
+        </div>
+    </footer>
+</body>
+</html>

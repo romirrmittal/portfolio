@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Reenie+Beanie&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo-button">
+            <img src="images/rm_logo.png" width="120px">
+        </a> 
+        <nav>
+            <a href="index.html" class="nav-button">HOME</a>&nbsp;&nbsp;
+            <a href="projects.html" class="active">WORK</a>&nbsp;&nbsp;
+            <a href="play.html" class="nav-button">PLAY</a>&nbsp;&nbsp;
+            <a href="about.html" class="nav-button">ABOUT</a>&nbsp;&nbsp;
+        </nav>
+        <div class="time-container">
+            <div class="time">
+                <p id="current-time"></p>
+            </div> 
+        </div>
+        <script>
+            setInterval(() => {
+                let time = document.getElementById("current-time")
+                let d = new Date();
+                time.innerHTML = d.toLocaleTimeString();
+            }, 1000)
+        </script>
+        <div class="location-container">
+            <p class="location">Milan, Italy</p>
+        </div>
+    </header>
+    <div>
+        <button id="backButton" class="back-button">←</button>
+        <script>
+            document.getElementById("backButton").addEventListener("click", function() {
+            window.history.back();
+            });
+        </script>
+    </div>
+
+    <div class="details">
+        <img src="images/designu_transparent.png" width="200px">
+        <h1>Sync</h1>
+        <h3>Design U is a pro-bono consulting group at the University of Minnesota</h3>
+        <p style="margin: 0 60px 0 60px">The Research and Strategy worked with a start-up Engineering Entrepreneurship Hub called "Minnovation Center" in Fall 2022. This project helped understand the true users of this program, develop requirements, and provide directional recommendations for the client.</p>
+        <div class="skills-section">
+            <a class="skills"> Market Research</a>
+            <a class="skills"> Competitive Analysis</a>
+            <a class="skills"> Ideation</a>
+            <a class="skills"> Design Thinking</a>
+        </div>
+    </div>
+    <div class="details">
+        <img src="images/Infographic.png" width=600px>
+    </div>
+    <footer class="footer">
+        <div>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/romirmittal/" target="_blank" class="link">
+                    <h4>linkedin</h4>
+                </a>
+                <a href="https://music.apple.com/profile/romirrmittal" target="_blank" class="link">
+                    <h4>apple music</h4>
+                </a>
+                <a href="https://www.instagram.com/romirrmittal/" target="_blank" class="link">
+                    <h4>instagram</h4>
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>enjoy if you happen to come across, rm</p>
+            </div>
+            <div class="cp">
+                <p> © 2024 RM. All Rights Reserved. </p> 
+             </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Reenie+Beanie&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo-button">
+            <img src="images/rm_logo.png" width="120px">
+        </a> 
+        <nav>
+            <a href="index.html" class="nav-button">HOME</a>&nbsp;&nbsp;
+            <a href="projects.html" class="nav-button">WORK</a>&nbsp;&nbsp;
+            <a href="play.html" class="nav-button">PLAY</a>&nbsp;&nbsp;
+            <a href="about.html" class="active">ABOUT</a>&nbsp;&nbsp;
+        </nav>
+        <div class="time-container">
+            <div class="time">
+                <p id="current-time"></p>
+            </div> 
+        </div>
+        <script>
+            setInterval(() => {
+                let time = document.getElementById("current-time")
+                let d = new Date();
+                time.innerHTML = d.toLocaleTimeString();
+            }, 1000)
+        </script>
+        <div class="location-container">
+            <p class="location">Minneapolis, MN</p>
+        </div>
+    </header>
+    <div class="about-main-text">
+        <h1 class="about-name">ROMIR IS A </h1>
+        <h1 class="changing-description">
+            <span>
+                CREATIVE. <br />
+                LEADER. <br />
+                DESIGNER. <br />
+                STUDENT. <br />
+            </span>
+        </h1>
+    </div>
+    <div class="about-hero">
+    </div>
+
+    <div class="about-menu-container">
+        <button data-section="professional" class="about-menu active">PROFESSIONAL</button>
+        <button data-section="academic" class="about-menu">ACADEMIC</button>
+        <button data-section="personal" class="about-menu">PERSONAL</button>
+    </div>
+
+    <div class="about-content professional active">
+        <p style="color: #432818">I am an aspiring Product Manager who deeply values user centricity and data-driven problem solving. I have two summers of experience in Product, familiar with roadmap planning, requirement documents, functional specifications, product demoing, prioritization, costing, and more.</p>
+        <div class="content-wrapper">
+            <h3>May 2024 - August 2024</h3>
+            <h1>Product Manager Intern</h1>
+            <h3>Microsoft</h3>
+            <p> Marketing Engineering, Business & Industry Copilot</p>
+        </div>
+        <div class="content-wrapper">
+            <h3>May 2023 - August 2023</h3>
+            <h1>Product Manager Intern</h1>
+            <h3>Microsoft</h3>
+            <p>Store Insights & Expansion, Customer Experience, Commerce & Ecosystems</p>
+        </div>
+        <div class="content-wrapper">
+            <h3>September 2022 - March 2023</h3>
+            <h1>Student Associate Consultant</h1>
+            <h3>University of Minnesota Athletics Department</h3>
+            <p>Economic Impact Analysis, Revenue Analysis, Data Visualizations</p>
+        </div>
+    </div>
+    
+    <div class="about-content academic">
+        <p style="color: #432818"></p>
+        <div class="content-wrapper">
+            <h3>September 2021 - May 2025</h3>
+            <h1>University of Minnesota, Twin Cities</h1>
+            <h3>Carlson School of Management</h3>
+            <p>Bachelor of Science in Business in Management Information Systems</p>
+            <li>Minors: Computer Science, UI/UX Design, Entrepreneurship</li>
+        </div>
+        <div class="content-wrapper">
+            <h3>January 2024 - June 2024</h3>
+            <h1>Università Bocconi</h1>
+            <h3>Exchange Program</h3>
+            <p>Management Consulting, Fashion Management, E-Commerce, Technology Innovation Management</p>
+            <li>1 of 6 selected to this highly competitive program. Top 5 Business University in EU.</li>
+        </div>
+    </div>
+    
+    <div class="about-content personal">
+        <p style="color: #432818">California native. Music, food, and film enthusiast. Highly introspective, intentional, and grounded Individual. In the limited time I have on this world, I wish to spend my time feeding the soul, making a difference, and challenging myself to exist in the now.</p>
+        <!-- <div class="content-wrapper">
+            <h3>Stills from my life</h3>
+            <img
+        </div> -->
+    </div>
+
+    <script>
+        document.querySelectorAll('.about-menu').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content sections
+                document.querySelectorAll('.about-menu').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.about-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show the corresponding content section
+                const section = button.getAttribute('data-section');
+                document.querySelector(`.about-content.${section}`).classList.add('active');
+            });
+        });
+    </script>
+   
+    <footer class="footer">
+        <div>
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/romirmittal/" target="_blank" class="link">
+                    <h4>linkedin</h4>
+                </a>
+                <a href="https://open.spotify.com/user/romir.mittal" target="_blank" class="link">
+                    <h4>apple music</h4>
+                </a>
+                <a href="https://www.instagram.com/romirrmittal/" target="_blank" class="link">
+                    <h4>instagram</h4>
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>enjoy if you happen to come across, rm</p>
+            </div>
+            <div class="cp">
+                <p> © 2024 RM. All Rights Reserved. </p> 
+             </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
